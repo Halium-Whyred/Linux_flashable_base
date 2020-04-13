@@ -171,7 +171,7 @@ ui_print " ";
 ## Create UDEV 
 
 ui_print " Copy && Create udev ";
-# cat /Ubuntu/System/ueventd*.rc /Ubuntu/Vendor/ueventd*.rc | grep ^/dev | sed -e 's/^\/dev\///' | awk '{printf "ACTION==\"add\", KERNEL==\"%s\", OWNER=\"%s\", GROUP=\"%s\", MODE=\"%s\"\n",$1,$3,$4,$2}' | sed -e 's/\r//' > /Ubuntu/Rootfs/etc/udev/rules.d/70-ubport.rules;
+cat /Ubuntu/System/ueventd*.rc /Ubuntu/Vendor/ueventd*.rc | grep ^/dev | sed -e 's/^\/dev\///' | awk '{printf "ACTION==\"add\", KERNEL==\"%s\", OWNER=\"%s\", GROUP=\"%s\", MODE=\"%s\"\n",$1,$3,$4,$2}' | sed -e 's/\r//' > /Ubuntu/Rootfs/etc/udev/rules.d/70-ubport.rules;
 ui_print " ";
 ui_print " Create Done ";
 ui_print " ";
